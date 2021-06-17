@@ -32,4 +32,4 @@ services:
         depends_on:
             - "pdss"
 
-        ## docker_process_sql --dont-use-mysql-root-password --database=mydb <my-file.sql
+       

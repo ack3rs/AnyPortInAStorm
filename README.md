@@ -18,33 +18,38 @@ Once you have built the images
 To run locally, there are 2 scripts to run using "go runs". This uses a local database not 
 the one defined in the docker compose file.  To run the code like this you'll need the database which is all defined in the /db/init.sql.
 
-To access the database,  
-
-```
-docker exec -it anyportinastorm_mysql_1 mysql -u sqluser -psqlpass
-```
-
 ```runServer.sh```
 
 and 
 
 ```runClient.sh```
 
-To upload a file,  you can use browser to http://localhost:8080 and use the form.  
+
+### To access the database,  
+
+```
+docker exec -it anyportinastorm_mysql_1 mysql -u sqluser -psqlpass
+```
+
+### To upload a file,  you can use browser to http://localhost:8080 and use the form.  
 
 Or use curl
 
 ``` 
-curl
+curl -F "portsFile=@ports.json" http://localhost:8080/upload
 ```
 
 ## Random Commands to make a Note off 
 
 Generate the RPC Code.  
-```protoc --go_out=. --go-grpc_out=. PortController.proto```
+```
+protoc --go_out=. --go-grpc_out=. PortController.proto
+```
 
 Log into the Docker Compose Database
-```docker exec -it anyportinastorm_mysql_1 mysql -u sqluser -psqlpass```
+```
+docker exec -it anyportinastorm_mysql_1 mysql -u sqluser -psqlpass
+```
 
 
 ### Issues or things I am not happy with.

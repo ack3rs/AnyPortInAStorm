@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package PortController;
+option go_package = "github.com/acky666/AnyPortInAStorm/PortController";
+
+
+message Port{ 
+    string PortName = 1;
+    string PortInfo = 2;
+}
+
+service PortQueryService {
+    rpc UpdatePort(Port) returns (Port) {}
+    rpc GetPort(Port) returns(Port) {}
+}

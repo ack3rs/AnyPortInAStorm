@@ -1,0 +1,35 @@
+version: '3'
+services:
+
+    mysql:
+        image: mysql:latest
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: "rootpass"
+        ports:
+            - 3306:3307
+        volumes: 
+            - "./db/init.sql:/docker-entrypoint-initdb.d/1.sql"
+    
+    pdss:
+        image: portdomainserviceserver
+        restart: always
+        environment: 
+            DatabaseDSN: "sqluser:sqlpass@tcp(mysql:3306)/ports"
+            SERVERPORT: ":10000"
+        ports:
+            - 10000:10000
+        depends_on:
+            - "mysql"
+        
+    client: 
+        image: client
+        restart: always
+        environment: 
+            RPC: "pdss:10000"
+        ports:
+            - 8080:8080
+        depends_on:
+            - "pdss"
+
+        ## docker_process_sql --dont-use-mysql-root-password --database=mydb <my-file.sql

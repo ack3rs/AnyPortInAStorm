@@ -1,0 +1,19 @@
+{
+    "PORTNAME": {
+      "name": "Port Name",
+      "city": "Port City",
+      "country": "The Country where the Port is",
+      "alias": [],
+      "regions": [],
+      "coordinates": [
+        52.5136433,
+        1.4052165
+      ],
+      "province": "a big area",
+      "timezone": "GMT",
+      "unlocs": [
+        "PORTNAME"
+      ],
+      "code": "PORTCODE"
+    }
+  }

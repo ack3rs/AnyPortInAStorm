@@ -54,13 +54,14 @@ docker exec -it anyportinastorm_mysql_1 mysql -u sqluser -psqlpass
 
 ### Issues or things I am not happy with.
 
-* Memory Management is really poor
+* Ideally I'd like to have spent alot more time than 2 hours on it. 
+* Memory Management is really poor (better use of pointers)
 * The JSON for Cordinates, since slice orders are not guaranteed in Go, the Lat Long could be the wrong way around. 
 * Limited Database Connection pooling.  (Open and Close for Each Save Operation)
-* Seperate this project into 3 repo's   PortController Defination, Client and Server
-* Better Networking with a service mesh.   (K8's is better here)
+* Seperate this project into 3 repo's PortController Defination, Client and Server
+* Better Networking with a service mesh. (K8's is better here)
 * Need to Use something like Vault for the Creds
-* if there are No Cords,  the database stores -1.
+* if there are No Cords, the database stores -1.
 
 ### TODO's 
 

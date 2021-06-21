@@ -1,6 +1,6 @@
 # AnyPortInAStorm
 
-A coding exercise to look at RPC & Golang MicroServices. 
+A (2 hour) coding exercise to look at RPC & Golang MicroServices. 
 
 
 To Run the Unit Tests
